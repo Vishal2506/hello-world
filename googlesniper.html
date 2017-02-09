@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en-US" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en-US" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en-US" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en-US" prefix="og: http://ogp.me/ns#"> <!--<![endif]-->
+<head><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={xpid:"XQMAWVVTGwsEVFFXBQU="};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(t,e,n){function r(t){try{c.console&&console.log(t)}catch(e){}}var o,i=t("ee"),a=t(15),c={};try{o=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(c.console=!0,o.indexOf("dev")!==-1&&(c.dev=!0),o.indexOf("nr_dev")!==-1&&(c.nrDev=!0))}catch(s){}c.nrDev&&i.on("internal-error",function(t){r(t.stack)}),c.dev&&i.on("fn-err",function(t,e,n){r(n.stack)}),c.dev&&(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(c,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,o){try{d?d-=1:i("err",[o||new UncaughtException(t,e,n)])}catch(c){try{i("ierr",[c,(new Date).getTime(),!0])}catch(s){}}return"function"==typeof f&&f.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function o(t){i("err",[t,(new Date).getTime()])}var i=t("handle"),a=t(16),c=t("ee"),s=t("loader"),f=window.onerror,u=!1,d=0;s.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(l){"stack"in l&&(t(8),t(7),"addEventListener"in window&&t(5),s.xhrWrappable&&t(9),u=!0)}c.on("fn-start",function(t,e,n){u&&(d+=1)}),c.on("fn-err",function(t,e,n){u&&(this.thrown=!0,o(n))}),c.on("fn-end",function(){u&&!this.thrown&&d>0&&(d-=1)}),c.on("internal-error",function(t){i("ierr",[t,(new Date).getTime(),!0])})},{}],3:[function(t,e,n){t("loader").features.ins=!0},{}],4:[function(t,e,n){function r(t){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var o=t("ee"),i=t("handle"),a=t(8),c=t(7),s="learResourceTimings",f="addEventListener",u="resourcetimingbufferfull",d="bstResource",l="resource",p="-start",h="-end",m="fn"+p,w="fn"+h,v="bstTimer",y="pushState";t("loader").features.stn=!0,t(6);var g=NREUM.o.EV;o.on(m,function(t,e){var n=t[0];n instanceof g&&(this.bstStart=Date.now())}),o.on(w,function(t,e){var n=t[0];n instanceof g&&i("bst",[n,e,this.bstStart,Date.now()])}),a.on(m,function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),a.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),this.bstType])}),c.on(m,function(){this.bstStart=Date.now()}),c.on(w,function(t,e){i(v,[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),o.on(y+p,function(t){this.time=Date.now(),this.startPath=location.pathname+location.hash}),o.on(y+h,function(t){i("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),f in window.performance&&(window.performance["c"+s]?window.performance[f](u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["c"+s]()},!1):window.performance[f]("webkit"+u,function(t){i(d,[window.performance.getEntriesByType(l)]),window.performance["webkitC"+s]()},!1)),document[f]("scroll",r,{passive:!0}),document[f]("keypress",r,!1),document[f]("click",r,!1)}},{}],5:[function(t,e,n){function r(t){for(var e=t;e&&!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&&o(e)}function o(t){c.inPlace(t,[u,d],"-",i)}function i(t,e){return t[1]}var a=t("ee").get("events"),c=t(17)(a,!0),s=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&&(o(window),o(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1],r=s(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?c(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],6:[function(t,e,n){var r=t("ee").get("history"),o=t(17)(r);e.exports=r,o.inPlace(window.history,["pushState","replaceState"],"-")},{}],7:[function(t,e,n){var r=t("ee").get("raf"),o=t(17)(r),i="equestAnimationFrame";e.exports=r,o.inPlace(window,["r"+i,"mozR"+i,"webkitR"+i,"msR"+i],"raf-"),r.on("raf-start",function(t){t[0]=o(t[0],"fn-")})},{}],8:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function o(t,e,n){this.method=n,this.timerDuration="number"==typeof t[1]?t[1]:0,t[0]=a(t[0],"fn-",this,n)}var i=t("ee").get("timer"),a=t(17)(i),c="setTimeout",s="setInterval",f="clearTimeout",u="-start",d="-";e.exports=i,a.inPlace(window,[c,"setImmediate"],c+d),a.inPlace(window,[s],s+d),a.inPlace(window,[f,"clearImmediate"],f+d),i.on(s+u,r),i.on(c+u,o)},{}],9:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",c)}function o(){var t=this,e=u.context(t);t.readyState>3&&!e.resolved&&(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,w,"fn-",c)}function i(t){v.push(t),h&&(g=-g,b.data=g)}function a(){for(var t=0;t<v.length;t++)r([],v[t]);v.length&&(v=[])}function c(t,e){return e}function s(t,e){for(var n in t)e[n]=t[n];return e}t(5);var f=t("ee"),u=f.get("xhr"),d=t(17)(u),l=NREUM.o,p=l.XHR,h=l.MO,m="readystatechange",w=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],v=[];e.exports=u;var y=window.XMLHttpRequest=function(t){var e=new p(t);try{u.emit("new-xhr",[e],e),e.addEventListener(m,o,!1)}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(s(p,y),y.prototype=p.prototype,d.inPlace(y.prototype,["open","send"],"-xhr-",c),u.on("send-xhr-start",function(t,e){r(t,e),i(e)}),u.on("open-xhr-start",r),h){var g=1,b=document.createTextNode(g);new h(a).observe(b,{characterData:!0})}else f.on("fn-end",function(t){t[0]&&t[0].type===m||a()})},{}],10:[function(t,e,n){function r(t){var e=this.params,n=this.metrics;if(!this.ended){this.ended=!0;for(var r=0;r<d;r++)t.removeEventListener(u[r],this.listener,!1);if(!e.aborted){if(n.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var i=o(t,this.lastSize);if(i&&(n.rxSize=i),this.sameOrigin){var a=t.getResponseHeader("X-NewRelic-App-Data");a&&(e.cat=a.split(", ").pop())}}else e.status=0;n.cbTime=this.cbTime,f.emit("xhr-done",[t],t),c("xhr",[e,n,this.startTime])}}}function o(t,e){var n=t.responseType;if("json"===n&&null!==e)return e;var r="arraybuffer"===n||"blob"===n||"json"===n?t.response:t.responseText;return h(r)}function i(t,e){var n=s(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}var a=t("loader");if(a.xhrWrappable){var c=t("handle"),s=t(11),f=t("ee"),u=["load","error","abort","timeout"],d=u.length,l=t("id"),p=t(14),h=t(13),m=window.XMLHttpRequest;a.features.xhr=!0,t(9),f.on("new-xhr",function(t){var e=this;e.totalCbs=0,e.called=0,e.cbTime=0,e.end=r,e.ended=!1,e.xhrGuids={},e.lastSize=null,p&&(p>34||p<10)||window.opera||t.addEventListener("progress",function(t){e.lastSize=t.loaded},!1)}),f.on("open-xhr-start",function(t){this.params={method:t[0]},i(this,t[1]),this.metrics={}}),f.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),f.on("send-xhr-start",function(t,e){var n=this.metrics,r=t[0],o=this;if(n&&r){var i=h(r);i&&(n.txSize=i)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(o.params.aborted=!0),("load"!==t.type||o.called===o.totalCbs&&(o.onloadCalled||"function"!=typeof e.onload))&&o.end(e)}catch(n){try{f.emit("internal-error",[n])}catch(r){}}};for(var a=0;a<d;a++)e.addEventListener(u[a],this.listener,!1)}),f.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),f.on("xhr-load-added",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),f.on("xhr-load-removed",function(t,e){var n=""+l(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),f.on("addEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-added",[t[1],t[2]],e)}),f.on("removeEventListener-end",function(t,e){e instanceof m&&"load"===t[0]&&f.emit("xhr-load-removed",[t[1],t[2]],e)}),f.on("fn-start",function(t,e,n){e instanceof m&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),f.on("fn-end",function(t,e){this.xhrCbStart&&f.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{}],11:[function(t,e,n){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname);var i=!e.protocol||":"===e.protocol||e.protocol===n.protocol,a=e.hostname===document.domain&&e.port===n.port;return r.sameOrigin=i&&(!e.hostname||a),r}},{}],12:[function(t,e,n){function r(){}function o(t,e,n){return function(){return i(t,[(new Date).getTime()].concat(c(arguments)),e?null:this,n),e?void 0:this}}var i=t("handle"),a=t(15),c=t(16),s=t("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var u=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(u,function(t,e){f[e]=o(d+e,!0,"api")}),f.addPageAction=o(d+"addPageAction",!0),f.setCurrentRouteName=o(d+"routeName",!0),e.exports=newrelic,f.interaction=function(){return(new r).get()};var p=r.prototype={createTracer:function(t,e){var n={},r=this,o="function"==typeof e;return i(l+"tracer",[Date.now(),t,n],r),function(){if(s.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return e.apply(this,arguments)}finally{s.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){p[e]=o(l+e)}),newrelic.noticeError=function(t){"string"==typeof t&&(t=new Error(t)),i("err",[t,(new Date).getTime()])}},{}],13:[function(t,e,n){e.exports=function(t){if("string"==typeof t&&t.length)return t.length;if("object"==typeof t){if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if(!("undefined"!=typeof FormData&&t instanceof FormData))try{return JSON.stringify(t).length}catch(e){return}}}},{}],14:[function(t,e,n){var r=0,o=navigator.userAgent.match(/Firefox[\/\s](\d+\.\d+)/);o&&(r=+o[1]),e.exports=r},{}],15:[function(t,e,n){function r(t,e){var n=[],r="",i=0;for(r in t)o.call(t,r)&&(n[i]=e(r,t[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],16:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(o<0?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=r},{}],17:[function(t,e,n){function r(t){return!(t&&t instanceof Function&&t.apply&&!t[a])}var o=t("ee"),i=t(16),a="nr@original",c=Object.prototype.hasOwnProperty,s=!1;e.exports=function(t,e){function n(t,e,n,o){function nrWrapper(){var r,a,c,s;try{a=this,r=i(arguments),c="function"==typeof n?n(r,a):n||{}}catch(f){l([f,"",[r,a,o],c])}u(e+"start",[r,a,o],c);try{return s=t.apply(a,r)}catch(d){throw u(e+"err",[r,a,d],c),d}finally{u(e+"end",[r,a,s],c)}}return r(t)?t:(e||(e=""),nrWrapper[a]=t,d(t,nrWrapper),nrWrapper)}function f(t,e,o,i){o||(o="");var a,c,s,f="-"===o.charAt(0);for(s=0;s<e.length;s++)c=e[s],a=t[c],r(a)||(t[c]=n(a,f?c+o:o,i,c))}function u(n,r,o){if(!s||e){var i=s;s=!0;try{t.emit(n,r,o)}catch(a){l([a,n,r,o])}s=i}}function d(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){l([r])}for(var o in t)c.call(t,o)&&(e[o]=t[o]);return e}function l(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=o),n.inPlace=f,n.flag=a,n}},{}],ee:[function(t,e,n){function r(){}function o(t){function e(t){return t&&t instanceof r?t:t?s(t,c,i):i()}function n(n,r,o){if(!l.aborted){t&&t(n,r,o);for(var i=e(o),a=h(n),c=a.length,s=0;s<c;s++)a[s].apply(i,r);var f=u[y[n]];return f&&f.push([g,n,r,i]),i}}function p(t,e){v[t]=h(t).concat(e)}function h(t){return v[t]||[]}function m(t){return d[t]=d[t]||o(n)}function w(t,e){f(t,function(t,n){e=e||"feature",y[n]=e,e in u||(u[e]=[])})}var v={},y={},g={on:p,emit:n,get:m,listeners:h,context:e,buffer:w,abort:a,aborted:!1};return g}function i(){return new r}function a(){(u.api||u.feature)&&(l.aborted=!0,u=l.backlog={})}var c="nr@context",s=t("gos"),f=t(15),u={},d={},l=e.exports=o();l.backlog=u},{}],gos:[function(t,e,n){function r(t,e,n){if(o.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return t[e]=r,r}var o=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){o.buffer([t],r),o.emit(t,e,n)}var o=t("ee").get("handle");e.exports=r,r.ee=o},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,i,function(){return o++})}var o=1,i="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!b++){var t=g.info=NREUM.info,e=d.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return f.abort();s(v,function(e,n){t[e]||(t[e]=n)}),c("mark",["onload",a()],null,"api");var n=d.createElement("script");n.src="https://"+t.agent,e.parentNode.insertBefore(n,e)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var c=t("handle"),s=t(15),f=t("ee"),u=window,d=u.document,l="addEventListener",p="attachEvent",h=u.XMLHttpRequest,m=h&&h.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:h,REQ:u.Request,EV:u.Event,PR:u.Promise,MO:u.MutationObserver},t(12);var w=""+location,v={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1016.min.js"},y=h&&m&&m[l]&&!/CriOS/.test(navigator.userAgent),g=e.exports={offset:a(),origin:w,features:{},xhrWrappable:y};d[l]?(d[l]("DOMContentLoaded",i,!1),u[l]("load",r,!1)):(d[p]("onreadystatechange",o),u[p]("onload",r)),c("mark",["firstbyte",a()],null,"api");var b=0},{}]},{},["loader",2,10,4,3]);</script>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="pingback" href="http://gsniper.com/xmlrpc.php" />
+<title>Finally revealing my $2,556 a day system</title>
+
+
+<!-- This site is optimized with the Yoast SEO plugin v3.7.0 - https://yoast.com/wordpress/plugins/seo/ -->
+<meta name="description" content="Google Sniper 3.0 is a bestselling, world-renowned E-course that teaches you exactly how to make a full time income online, starting from scratch."/>
+<meta name="robots" content="noodp"/>
+<link rel="canonical" href="http://gsniper.com/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Finally revealing my $2,556 a day system" />
+<meta property="og:description" content="Google Sniper 3.0 is a bestselling, world-renowned E-course that teaches you exactly how to make a full time income online, starting from scratch." />
+<meta property="og:url" content="http://gsniper.com/" />
+<meta property="og:site_name" content="Gsniper 3.0" />
+<meta property="og:image" content="http://gsniper.gdmbenterprisesl.netdna-cdn.com/wp-content/plugins/ctapro/decorations/underlines/003.png" />
+<script type='application/ld+json'>{"@context":"http:\/\/schema.org","@type":"WebSite","@id":"#website","url":"http:\/\/gsniper.com\/","name":"Gsniper 3.0","potentialAction":{"@type":"SearchAction","target":"http:\/\/gsniper.com\/?s={search_term_string}","query-input":"required name=search_term_string"}}</script>
+<!-- / Yoast SEO plugin. -->
+
+<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+<script language="javascript" src="/bump.js" type="text/javascript"></script>
+<script type="text/javascript">
+<!--
+ 
+var cookieExpiration = 30; // cookie stays in browser this many days
+function WriteCookie(name,value) 
+{
+	var exp = '';
+	var today = new Date();
+	var expdate = today.getTime() + (cookieExpiration * 24 * 60 * 60 * 1000);
+	today.setTime(expdate);
+	exp = '; expires=' + today.toGMTString();
+	document.cookie = name + "=" + value + '; path=/' + exp;
+}
+ 
+function showit() { 
+document.getElementById('le_body_row_3_col_1_el_2').style.display="none";
+document.getElementById('le_body_row_3_col_1_el_3').style.display="none";
+document.getElementById('le_body_row_3_col_1_el_4').style.display="block";
+document.getElementById('le_body_row_4').style.display="block";
+	}
+//-->
+</script>
+
+<script type="text/javascript">
+    var validateEmailForm = {
+        retries_count: 0,
+        submit: function(form) {
+            var redirect = false;
+            $('.moonrayUILockerOverlay').removeClass('moonrayUILockerOverlayBlocked');
+            $('.moonrayUILockerMessage').removeClass('moonrayUILockerMessageBlocked');
+            $.ajax('/emailverification.php', {data:{'email':form.email.value}}).done(function(data) {
+                if ( typeof(data) == 'object' ) {
+                    if ( data.status == 'valid' ) {
+                        form.submit();
+                    } else {
+                        if ( validateEmailForm.retries_count > 1 ) {
+                            switch ( form.getAttribute('name') ) {
+                                case 'redirectform1':
+                                    redirect = 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6FBMQXSABZ4HA';
+                                    break;
+                                case 'redirectform2':
+                                    redirect = 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CLFT96NS7XD6W';
+                                    break;
+                            }
+                        } else {
+                            alert('The e-mail address entered is invalid.');
+                            $('.moonrayUILockerOverlay').addClass('moonrayUILockerOverlayBlocked');
+                            $('.moonrayUILockerMessage').addClass('moonrayUILockerMessageBlocked');
+                            validateEmailForm.retries_count++;
+                        }
+                    }
+                } else {
+                    alert('Failed to connect to the server.');
+                }
+                if ( redirect ) {
+                    window.location = redirect;
+                }
+            });
+            return false;
+        }
+    }
+</script>
+<style type="text/css">
+.moonrayUILockerOverlayBlocked,
+.moonrayUILockerMessageBlocked {display:none !important; position:absolute; width:1px; height:1px; left:-100px;}
+</style><link rel="alternate" type="application/rss+xml" title="Gsniper 3.0 &raquo; Feed" href="http://gsniper.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Gsniper 3.0 &raquo; Comments Feed" href="http://gsniper.com/comments/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/72x72\/","ext":".png","source":{"concatemoji":"http:\/\/gsniper.com\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(a,b,c){function d(a){var c,d,e,f=b.createElement("canvas"),g=f.getContext&&f.getContext("2d"),h=String.fromCharCode;if(!g||!g.fillText)return!1;switch(g.textBaseline="top",g.font="600 32px Arial",a){case"flag":return g.fillText(h(55356,56806,55356,56826),0,0),f.toDataURL().length>3e3;case"diversity":return g.fillText(h(55356,57221),0,0),c=g.getImageData(16,16,1,1).data,d=c[0]+","+c[1]+","+c[2]+","+c[3],g.fillText(h(55356,57221,55356,57343),0,0),c=g.getImageData(16,16,1,1).data,e=c[0]+","+c[1]+","+c[2]+","+c[3],d!==e;case"simple":return g.fillText(h(55357,56835),0,0),0!==g.getImageData(16,16,1,1).data[0];case"unicode8":return g.fillText(h(55356,57135),0,0),0!==g.getImageData(16,16,1,1).data[0]}return!1}function e(a){var c=b.createElement("script");c.src=a,c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var f,g,h,i;for(i=Array("simple","flag","unicode8","diversity"),c.supports={everything:!0,everythingExceptFlag:!0},h=0;h<i.length;h++)c.supports[i[h]]=d(i[h]),c.supports.everything=c.supports.everything&&c.supports[i[h]],"flag"!==i[h]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[i[h]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(g=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",g,!1),a.addEventListener("load",g,!1)):(a.attachEvent("onload",g),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),f=c.source||{},f.concatemoji?e(f.concatemoji):f.wpemoji&&f.twemoji&&(e(f.twemoji),e(f.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='ctapro-googlefonts-0-css'  href='http://fonts.googleapis.com/css?family=Roboto+Condensed%3A400%2C700%2C700italic%2C400italic' type='text/css' media='all' />
+<link rel='stylesheet' id='optimizepress-page-style-css'  href='http://gsniper.gdmbenterprisesl.netdna-cdn.com/wp-content/themes/optimizePressTheme/pages/membership/1/style.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='optimizepress-default-css'  href='http://gsniper.gdmbenterprisesl.netdna-cdn.com/wp-content/themes/optimizePressTheme/lib/assets/default.min.css' type='text/css' media='all' />
+<script type='text/javascript' src='http://gsniper.gdmbenterprisesl.netdna-cdn.com/wp-includes/js/jquery/jquery.js'></script>
+<script type='text/javascript' src='http://gsniper.gdmbenterprisesl.netdna-cdn.com/wp-includes/js/jquery/jquery-migrate.min.js'></script>
+<script type='text/javascript'>
+/* <![CDATA[ */
+var OptimizePress = {"ajaxurl":"http:\/\/gsniper.com\/wp-admin\/admin-ajax.php","SN":"optimizepress","version":"2.5.6.1","script_debug":".min","localStorageEnabled":"","wp_admin_page":"","op_live_editor":"1","op_page_builder":"1","op_create_new_page":"","imgurl":"http:\/\/gsniper.com\/wp-content\/themes\/optimizePressTheme\/lib\/images\/","OP_URL":"http:\/\/gsniper.com\/wp-content\/themes\/optimizePressTheme\/","OP_JS":"http:\/\/gsniper.com\/wp-content\/themes\/optimizePressTheme\/lib\/js\/","OP_PAGE_BUILDER_URL":"","include_url":"http:\/\/gsniper.com\/wp-includes\/","op_autosave_interval":"300","op_autosave_enabled":"N","paths":{"url":"http:\/\/gsniper.com\/wp-content\/themes\/optimizePressTheme\/","img":"http:\/\/gsniper.com\/wp-content\/themes\/optimizePressTheme\/lib\/images\/","js":"http:\/\/gsniper.com\/wp-content\/themes\/optimizePressTheme\/lib\/js\/","css":"http:\/\/gsniper.com\/wp-content\/themes\/optimizePressTheme\/lib\/css\/"},"social":{"twitter":"optimizepress","facebook":"optimizepress","googleplus":"111273444733787349971"},"flowplayerHTML5":"http:\/\/gsniper.com\/wp-content\/uploads\/2015\/12\/flowplayer.swf","flowplayerKey":"$100278518673270","flowplayerLogo":"","mediaelementplayer":"http:\/\/gsniper.com\/wp-content\/themes\/optimizePressTheme\/lib\/modules\/blog\/video\/mediaelement\/","pb_unload_alert":"This page is asking you to confirm that you want to leave - data you have entered may not be saved.","pb_save_alert":"Please make sure you are happy with all of your options as some options will not be able to be changed for this page later.","search_default":"Search...","optimizemember":{"enabled":false,"version":"0"},"OP_LEADS_URL":"https:\/\/www.optimizeleads.com\/","OP_LEADS_THEMES_URL":"https:\/\/www.optimizeleads.com\/build\/themes\/"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://gsniper.gdmbenterprisesl.netdna-cdn.com/wp-content/themes/optimizePressTheme/lib/js/op-jquery-base-all.min.js'></script>
+<script type='text/javascript' src='http://gsniper.gdmbenterprisesl.netdna-cdn.com/wp-content/uploads/2015/12/flowplayer.min_.js'></script>
+<script type='text/javascript' src='http://gsniper.gdmbenterprisesl.netdna-cdn.com/wp-content/themes/optimizePressTheme/lib/js/op-video-all.min.js'></script>
+<script type='text/javascript' src='http://gsniper.gdmbenterprisesl.netdna-cdn.com/wp-content/plugins/ctapro/js/TweenMax.min.js'></script>
+<script type='text/javascript' src='http://gsniper.gdmbenterprisesl.netdna-cdn.com/wp-content/plugins/ctapro/js/ctaprofx.js'></script>
+<script type='text/javascript' src='http://gsniper.gdmbenterprisesl.netdna-cdn.com/wp-content/plugins/ctapro/js/ctapro.js'></script>
+<link rel='https://api.w.org/' href='http://gsniper.com/wp-json/' />
+<link rel='shortlink' href='http://gsniper.com/' />
+<link rel="alternate" type="application/json+oembed" href="http://gsniper.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fgsniper.com%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://gsniper.com/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fgsniper.com%2F&#038;format=xml" />
+
+        <!--[if (gte IE 6)&(lte IE 8)]>
+            <script type="text/javascript" src="http://gsniper.gdmbenterprisesl.netdna-cdn.com/wp-content/themes/optimizePressTheme/lib/js/selectivizr-1.0.2-min.js?ver=1.0.2"></script>
+        <![endif]-->
+        <!--[if lt IE 9]>
+            <script src="http://gsniper.gdmbenterprisesl.netdna-cdn.com/wp-content/themes/optimizePressTheme/lib/js//html5shiv.min.js"></script>
+        <![endif]-->
+    
+            <style type="text/css" id="op_header_css">
+            p, .single-post-content li, #content_area li, .op-popup-button .default-button{font-style:normal;font-weight:300;font-size:17px;font-family:"Lato", sans-serif;color:#444}a, blockquote{font-family:"Lato", sans-serif}h1,.main-content h1,.single-post-content h1,.full-width.featured-panel h1,.latest-post .the-title, .step-graphic-style-1-number, .step-graphic-style-2-number, .step-graphic-style-3-number, .step-graphic-style-4-number, .step-graphic-style-5-number{font-family:"Lato", sans-serif}h2,.main-content h2,.single-post-content h2,.op-page-header h2,.featured-panel h2,.featured-posts .post-content h2,.featured-posts .post-content h2 a,.latest-post h2 a{font-family:"Lato", sans-serif}h3,.main-content h3,.single-post-content h3{font-style:normal;font-weight:300;font-size:35px;font-family:"Lato", sans-serif}h4,.main-content h4,.single-post-content h4,.older-post h4 a{font-family:"Lato", sans-serif}h5,.main-content h5,.single-post-content h5{font-family:"Lato", sans-serif}h6,.main-content h6,.single-post-content h6{font-family:"Lato", sans-serif}a,a:visited{text-decoration:none}a:hover{text-decoration:none}.footer-navigation ul li a{text-decoration:none}.footer-navigation ul li a:hover{text-decoration:none}.footer a{text-decoration:none}.footer a:hover{text-decoration:none}.footer small.footer-copyright a{text-decoration:none}.footer small.footer-copyright a:hover{text-decoration:none}.footer small.footer-disclaimer a{text-decoration:none}.footer small.footer-disclaimer a:hover{text-decoration:none}.nav-bar-below.op-page-header{background: #151515;background: -moz-linear-gradient(top, #151515 0%, #151515 100%);background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#151515), color-stop(100%,#151515));background: -webkit-linear-gradient(top, #151515 0%,#151515 100%);background: -o-linear-gradient(top, #151515 0%,#151515 100%);background: -ms-linear-gradient(top, #151515 0%,#151515 100%);background: linear-gradient(top, #151515 0%,#151515 100%));filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#151515', endColorstr='#151515',GradientType=0 )}body .container .nav-bar-below .navigation ul ul li{background-color:#151515 !important}
+            </style>
+            
+<style id="op_custom_css">
+.banner.centered-banner {
+background-repeat: repeat-x !important;
+}
+
+.footer {
+background: url("/images/footerbg.png") repeat-x;
+height: 193px;
+}
+.footer .fixed-width {
+background: url("/images/footer.png") no-repeat top center;
+height: 193px;
+}
+
+.gscopyright {
+font-size: 14px;
+color: #bbbbbb !important;
+}
+
+.footer-navigation {
+float: none;
+margin: auto;
+}
+
+.footer small {
+padding-bottom: 10px !important;
+}
+
+.footer-navigation ul li a { text-decoration: none;}
+
+.footer-navigation ul li a:hover { text-decoration: none;}
+
+#le_body_row_2_col_2_el_4 button span{
+background: url("/images/instant-access-jv.png") no-repeat;
+background-position: 0 0;
+width: 293px;
+height: 105px;
+display: block;
+text-indent: -99999px
+}
+
+#le_body_row_2_col_2_el_4 button:hover span{
+background-position: 0 -105px; 
+}
+
+#le_body_row_2_col_2_el_4 button:active span{
+background-position: 0 -210px;
+}
+</style>
+<style type="text/css">/* CUSTOM CODE REQUIRED FOR THIS TEMPLATE DO NOT REMOVE */
+
+body {
+background: url("/images/gs3bg.jpg") no-repeat top center #000;
+color: #FFFFFF;
+font-family: "Lato", sans-serif;
+}
+
+.photoround .image-caption img {border-radius:50%;}
+
+.image-caption.frame-style-3 .frame-style-inner {padding:20px;}
+
+
+.feature-box-5{border:none;}
+
+.feature-box-5 .feature-box-content{
+border:none;
+background-color:#f2f7fb;
+font-style:normal;}
+
+.extrabold h2{font-weight:900;}
+
+.feature-block-style-1 div{background:#59a5d4;padding:10px;}
+
+.css-button.style-1 .text, .op-text-block p {
+-webkit-font-smoothing:auto;}
+
+p, h2{-webkit-font-smoothing:auto; text-rendering: optimizelegibility;}
+
+.banner .logo img{width:200px;}
+
+.bottom_link a{padding-bottom:5px;border-bottom:5px solid;}
+
+.banner .op-logo img {max-width:200px}
+
+.banner {
+padding: 28px 0;
+}
+
+.optx {
+background-color: rgba(0, 0, 0, 0.2);
+width: 700px;
+height: auto;
+margin: 0 auto 10px;
+padding: 10px;
+font-family: "Lato", sans-serif;
+} 
+
+.note label{
+font-size: 12.8px;
+text-align: center;
+font-family: "Lato", sans-serif;
+font-weight: normal;
+}
+
+.note input[type="checkbox"] {
+    display:none;
+}
+.note input[type="checkbox"] + label span {
+    display:inline-block;
+    width:58px;
+    height:26px;
+    margin:0px 4px 0px 0px;
+    vertical-align:middle;
+float: left;
+    background:url(/images/gs-option.png) no-repeat;
+background-position: 0 -26px;
+    cursor:pointer;
+}
+.note input[type="checkbox"]:checked + label span {
+    background:url(/images/gs-option.png) no-repeat;
+background-position: 0 0;
+}
+
+.dlnow {
+background: url("/images/dlnow.png") no-repeat;
+background-position: 0 0;
+width: 452px;
+height: 90px;
+margin:10px auto 0px auto;
+text-align: center;
+display: block;
+text-indent: -99999px;
+    outline: none;
+    cursor: pointer;
+}
+
+.dlnow:hover {
+background-position: 0 -90px ;
+}
+
+.dlnow:active {
+background-position: 0 -180px ;
+}
+
+.availablenow {
+background: url("/images/tag.png") no-repeat transparent;
+padding: 15px  0px 0px 60px;
+position: absolute;
+right: 0px;
+top: 0px;
+width: 165px;
+height: 70px;
+margin-top: 50px;
+}
+
+.testi {
+position: fixed;
+right: 0px;
+bottom: -4px;
+margin-right: 40px;
+}
+
+.availablenow .one-column.column {
+width: auto !important;
+}
+
+.moonray-form-p2c9753f23 .moonray-form , .moonray-form-p2c9753f24 .moonray-form , subscriptionFrm_14728 , form_integration {
+margin: auto;
+}
+
+.moonray-form-p2c9753f23 .moonray-form-element-wrapper , .moonray-form-p2c9753f24 .moonray-form-element-wrapper {
+padding-left: 0px !important;
+padding-right: 0px !important;
+}
+
+.moonray-form-p2c9753f23 #mr-field-element-163777917145 , .moonray-form-p2c9753f24 #mr-field-element-163777917145 , input[type="submit" i] {
+background: url("/images/dlnow.png") no-repeat;
+background-position: 0 0;
+width: 452px !important;
+height: 90px;
+text-align: center;
+display: block;
+text-indent: -99999px;
+border: none;
+margin: auto;
+    outline: none;
+    cursor: pointer;
+}
+
+.moonray-form-p2c9753f23 #mr-field-element-163777917145:hover , .moonray-form-p2c9753f24 #mr-field-element-163777917145:hover , input[type="submit" i]:hover {
+background-position: 0 -90px ;
+}
+
+.moonray-form-p2c9753f23 #mr-field-element-163777917145:active , .moonray-form-p2c9753f24 #mr-field-element-163777917145:active , input[type="submit" i]:active {
+background-position: 0 -180px ;
+}
+
+.moonray-form-element-wrapper.moonray-form-element-wrapper-alignment-left.moonray-form-input-type-email , input[type=text] {
+    float: none !important;
+    margin: 0 auto !important;
+    width: 360px !important;
+}
+
+.moonray-form-input , input[type=text]{
+    font-family: "lato",sans-serif !important;
+    font-size: 19px !important;
+font-weight: normal !important;
+    height: 25px;
+}
+
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+
+.gs3video .video-plugin-new {
+background: url("/images/bluestreamingbar.gif") no-repeat bottom center transparent;
+-webkit-background-clip: padding-box; /* for Safari */
+background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+padding-bottom: 21px !important;
+}
+
+#le_body_row_5_col_1_el_2 {
+font-weight: bold;
+font-size: 18px;
+text-align: center;
+}
+
+.footerlinks a {
+color: #AAAAAA;
+}
+
+.footerlinks a:hover {
+color: #CCCCCC;
+}
+
+.supportlink a {
+color: #AAAAAA;
+}
+
+.supportlink a:hover {
+color: #CCCCCC;
+}
+
+.page .fancybox-opened , .page .fancybox-outer , .page .fancybox-inner {
+height: 600px !important;
+}
+
+p.trust-statement , p.translate { color: #ccc; }
+
+.fb { height: 20px; }
+
+#le_body_row_3_col_1_el_4 , #le_body_row_4 {
+display: none;
+}
+
+.livevisitors { display: none; }
+
+/* 
+#le_body_row_1_col_1_el_2 { margin-top: 20px; }
+
+.livevisitors {
+position: absolute;
+right: 0px;
+top: 0px;
+}
+*/
+.livev {
+background: url("/images/livefeeds.png") no-repeat top center transparent;
+position: absolute;
+right: 50px;
+top: 130px;
+padding: 27px 18px 35px 20px;
+}
+
+.livetitle {
+font-size: 14px;
+font-weight: bold;
+text-align: center;
+color: #ffffff;
+background: #000000;
+}
+
+.footertext p {
+font-size: 11.8px !important;
+}
+/* CUSTOM CODE REQUIRED FOR THIS TEMPLATE DO NOT REMOVE */
+
+/*  Tablet Layout: 768px. */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+}
+/*  Mobile Layout: 320px. */
+@media only screen and (max-width: 767px) {
+
+.gs3video .video-plugin-new {
+padding-bottom: 10px!important;
+background-size: 100% 10px;
+}
+
+.optx {
+background-color: rgba(0, 0, 0, 0.2);
+width: 280px;
+height: auto;
+margin: 0 auto 10px;
+padding: 10px;
+font-family: "Lato", sans-serif;
+} 
+
+.note label{
+font-size: 12px;
+text-align: center;
+font-family: "Lato", sans-serif;
+font-weight: normal;
+}
+
+.note input[type="checkbox"] {
+    display:none;
+}
+.note input[type="checkbox"] + label span {
+    display:inline-block;
+    width:58px;
+    height:26px;
+    margin:0px 4px 0px 0px;
+    vertical-align:middle;
+float: left;
+    background:url(/images/gs-option.png) no-repeat;
+background-position: 0 -26px;
+    cursor:pointer;
+}
+.note input[type="checkbox"]:checked + label span {
+    background:url(/images/gs-option.png) no-repeat;
+background-position: 0 0;
+}
+
+.dlnow {
+background: url("/images/dlnow.png") no-repeat;
+background-position: 0 0;
+width: 452px;
+height: 90px;
+margin:10px auto 0px auto;
+text-align: center;
+display: block;
+text-indent: -99999px;
+}
+
+.dlnow:hover {
+background-position: 0 -90px ;
+}
+
+.dlnow:active {
+background-position: 0 -180px ;
+}
+
+.availablenow {
+background: url("/images/tag.png") no-repeat transparent;
+padding: 15px  0px 0px 60px;
+position: absolute;
+right: 0px;
+top: 0px;
+width: 165px;
+height: 70px;
+margin-top: 50px;
+}
+
+.testi {
+position: fixed;
+right: 0px;
+bottom: -4px;
+margin-right: 40px;
+}
+
+.availablenow .one-column.column {
+width: auto !important;
+}
+
+.moonray-form-p2c9753f23 .moonray-form , .moonray-form-p2c9753f24 .moonray-form {
+margin: auto;
+width: 305px !important;
+}
+
+.moonray-form-p2c9753f23 .moonray-form-element-wrapper , .moonray-form-p2c9753f24 .moonray-form-element-wrapper {
+padding-left: 0px !important;
+padding-right: 0px !important;
+}
+
+.moonray-form-p2c9753f23 #mr-field-element-163777917145 , .moonray-form-p2c9753f24 #mr-field-element-163777917145 {
+background: url("/images/dlnow.png") no-repeat;
+background-position: 0 0;
+background-size: 100% 300%;
+width: 305px !important;
+height: 63px;
+text-align: center;
+display: block;
+text-indent: -99999px;
+border: none;
+}
+
+.moonray-form-p2c9753f23 #mr-field-element-163777917145:hover , .moonray-form-p2c9753f24 #mr-field-element-163777917145:hover {
+background-position: 0 -63px ;
+}
+
+.moonray-form-p2c9753f23 #mr-field-element-163777917145:active , .moonray-form-p2c9753f24 #mr-field-element-163777917145:active {
+background-position: 0 -126px ;
+}
+
+.moonray-form-element-wrapper.moonray-form-element-wrapper-alignment-left.moonray-form-input-type-email {
+    float: none !important;
+    margin: 0 auto !important;
+    width: 260px !important;
+}
+
+.moonray-form-input {
+    font-family: "lato",sans-serif !important;
+    font-size: 19px !important;
+font-weight: normal !important;
+    height: 40px;
+}
+
+}
+/*  Wide Mobile Layout: 480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+}</style>
+<link href="http://fonts.googleapis.com/css?family=Lato:300,r,b,i,bi" rel="stylesheet" type="text/css" /></head>
+<body class="home page page-id-28474 page-template-default op-live-editor-page op-theme">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56247154-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+    <div class="container main-content">
+        <div id="content_area" class="">
+                    <div style='padding-top:10px;padding-bottom:0px;border-top-width:px;border-top-style:solid;border-top-color:;border-bottom-width:px;border-bottom-style:solid;border-bottom-color:;'  class="row one-column cf ui-sortable section" id="le_body_row_1" data-style="eyJwYWRkaW5nVG9wIjoiMTAiLCJwYWRkaW5nQm90dG9tIjoiMCIsImJvcmRlclRvcFdpZHRoIjoiIiwiYm9yZGVyVG9wQ29sb3IiOiIiLCJib3JkZXJCb3R0b21XaWR0aCI6IiIsImJvcmRlckJvdHRvbUNvbG9yIjoiIiwiYWRkb24iOnt9fQ==">
+                        <div class="fixed-width"><div class="one-column column cols" id="le_body_row_1_col_1"><div class="element-container cf" data-style="" id="le_body_row_1_col_1_el_1"><div class="element"> <div class="op-custom-html-block"><center><div id="cta_0" style="visibility:hidden"><div id="cta_0_el_2" style="position:absolute;"><div class="_cta_cont _cta_text_cont"><div class="_cta_txt">$2,293.26 Per Day From My Laptop</div></div></div><div id="cta_0_el_1" style="position:absolute;"><div class="_cta_cont _cta_text_cont"><div class="_cta_txt">And You Can Download It Here</div></div></div><div id="cta_0_el_0" style="position:absolute;"><div class="_cta_cont _cta_deco_cont"><div><img src="http://gsniper.gdmbenterprisesl.netdna-cdn.com/wp-content/plugins/ctapro/decorations/underlines/003.png" style="display:block"></div></div></div></div><script>	if (typeof _cta_id_stage === "undefined") var _cta_id_stage = [];	if (typeof _cta_stage_settings === "undefined") var _cta_stage_settings = [];	if (typeof _cta_elements === "undefined") var _cta_elements = [];	_cta_id_stage[0] = "cta_0";	_cta_stage_settings[0] = {"width":"800px","height":"100px","bg":null,"start":"ready","visibleTreshold":100,"delay":0,"perspective":"600px","perspective_origin_x":"50%","perspective_origin_y":"50%","responsive":true,"overflow":"hidden","border_style":"solid","border_size":"0px","border_color":"#000000","border_radius":"0px"};	_cta_elements[0] = {};	_cta_elements[0]["cta_0_el_2"] = {"id":"element2","visible":true,"type":"text","text":"$2,293.26 Per Day From My Laptop","left":95,"top":10,"opacity":1,"font_family":{"name":"Roboto Condensed","value":"'Roboto Condensed'"},"font_size":"44px","line_height":"40px","letter_spacing":"normal","font_weight":"700","font_style":"normal","text_align":"left","color":"#ffffff","scaleX":1,"scaleY":1,"rotationX":0,"rotationY":0,"rotationZ":0,"border_style":"solid","border_size":"0px","border_color":"#000","border_radius":"0px","padding_top":"0px","padding_right":"0px","padding_bottom":"0px","padding_left":"0px","background_color":"","custom_style":"","url":"","url_target":"_blank","hover":false,"hover_color":"#000","hover_opacity":"1","hover_speed":"0.3","sort":[],"animation":{"entry_delay":0,"entry_effect":"Fade Top","entry_effect_speed":1,"last_delay":2,"last_effect":"none","last_effect_speed":1},"width":null,"height":null};	_cta_elements[0]["cta_0_el_1"] = {"id":"element1","visible":true,"type":"text","text":"And You Can Download It Here","left":233,"top":55,"opacity":1,"font_family":{"name":"Roboto Condensed","value":"'Roboto Condensed'"},"font_size":"28px","line_height":"40px","letter_spacing":"normal","font_weight":"400","font_style":"italic","text_align":"left","color":"#ffffff","scaleX":1,"scaleY":1,"rotationX":0,"rotationY":0,"rotationZ":0,"border_style":"solid","border_size":"0px","border_color":"#000","border_radius":"0px","padding_top":"0px","padding_right":"0px","padding_bottom":"0px","padding_left":"0px","background_color":"","custom_style":"","url":"","url_target":"_blank","hover":false,"hover_color":"#000","hover_opacity":"1","hover_speed":"0.3","sort":[],"animation":{"entry_delay":1.45,"entry_effect":"Skew Right","entry_effect_speed":1,"last_delay":2,"last_effect":"none","last_effect_speed":1},"width":null,"height":null};	_cta_elements[0]["cta_0_el_0"] = {"id":"element0","visible":true,"type":"decoration","path":"http:\/\/gsniper.com\/wp-content\/plugins\/ctapro\/decorations\/underlines\/003.png","left":277,"top":50,"opacity":1,"scaleX":1,"scaleY":1,"widthPerc":29,"heightPerc":42,"rotationX":0,"rotationY":0,"rotationZ":0,"custom_style":"","url":"","url_target":"_blank","hover":false,"hover_opacity":"1","hover_speed":"0.3","sort":[],"animation":{"entry_delay":0.94,"entry_effect":"Fade","entry_effect_speed":1.08,"last_delay":2,"last_effect":"none","last_effect_speed":1},"custom_url":false,"decoration":"underlines\/003.png","origWidth":500,"width":145,"origHeight":12,"height":5.04};	$j(document).ready(function(){ _ctaGo(_cta_id_stage[0], _cta_stage_settings[0], _cta_elements[0]); });</script></center></div> </div></div><div class="element-container cf hide-mobile hide-tablet" data-style="eyJoaWRlTW9iaWxlIjoxLCJoaWRlVGFibGV0IjoxfQ==" id="le_body_row_1_col_1_el_2"><div class="element"><div class="op-custom-html-block"><div class="livev">
+<div class="livetitle">Live Visitor Feed</div>
+<script type="text/javascript" src="http://feedjit.com/serve/?vv=1515&tft=3&dd=0&wid=&pid=0&proid=0&bc=FFFFFF&tc=000000&brd1=000000&lnk=35993C&hc=FFFFFF&hfc=050505&btn=000000&ww=150&wne=5&srefs=0"></script>
+<script type="text/javascript">
+var head = jQuery('iframe[name="FJIframe"]').contents().find("head");
+var css = '<style type="text/css">' +
+          '.feedjitc-header{display: none !important;}#fjEvents{height: 238px !important}.feedjitc-morelink{font-size: 9px;}; ' +
+          '</style>';
+jQuery(head).append(css);
+setTimeout(function(){
+    jQuery('iframe[name="FJIframe"]').contents()
+        .find('#feedjiti-overlay2 .feedjitc-morelink:last').replaceWith('<span class="feedjitc-morelink">By Feedjit</span>')
+    .end()
+        .find('.traffic').contents().filter(function() {
+            if(this.nodeType === 3) {
+                if($.trim($(this).text()) == 'A visitor from') {
+                    return true;
+                }
+            }
+            return false;
+        }).replaceWith('New Visitor from');
+}, 2000);
+</script>
+
+<script>
+jQuery( document ).ready(function() {
+   jQuery(".feedjitc-action").contents().each(function(i){
+      if($.trim(this.textContent) == "viewed"){
+         return this.textContent = "View Presentation";
+      }
+   });
+});
+</script>
+</div></div></div></div></div></div></div>
+                    <div style='border-top-width:px;border-top-style:solid;border-top-color:;border-bottom-width:px;border-bottom-style:solid;border-bottom-color:;'  class="row one-column cf ui-sortable livevisitors" id="le_body_row_2" data-style="eyJjc3NDbGFzcyI6ImxpdmV2aXNpdG9ycyIsImJvcmRlclRvcFdpZHRoIjoiIiwiYm9yZGVyVG9wQ29sb3IiOiIiLCJib3JkZXJCb3R0b21XaWR0aCI6IiIsImJvcmRlckJvdHRvbUNvbG9yIjoiIiwiYWRkb24iOnt9fQ==">
+                        <div class="fixed-width"><div class="one-column column cols" id="le_body_row_2_col_1"></div></div></div>
+                    <div style='padding-top:0px;padding-bottom:0px;border-top-width:px;border-top-style:solid;border-top-color:;border-bottom-width:px;border-bottom-style:solid;border-bottom-color:;'  class="row one-column cf ui-sortable" id="le_body_row_3" data-style="eyJwYWRkaW5nVG9wIjoiMCIsInBhZGRpbmdCb3R0b20iOiIwIiwiYm9yZGVyVG9wV2lkdGgiOiIiLCJib3JkZXJUb3BDb2xvciI6IiIsImJvcmRlckJvdHRvbVdpZHRoIjoiIiwiYm9yZGVyQm90dG9tQ29sb3IiOiIiLCJhZGRvbiI6e319">
+                        <div class="fixed-width"><div class="one-column column cols" id="le_body_row_3_col_1"><div class="element-container cf gs3video" data-style="eyJhZHZhbmNlZENsYXNzIjoiZ3MzdmlkZW8ifQ==" id="le_body_row_3_col_1_el_1"><div class="element"><div class="video-plugin-new" style="max-width:100%; width:718px; height:auto; padding-top:0; padding-bottom:0; margin:0 auto;margin:0 auto; border: 1px solid #0f161f;margin-bottom: 0px;"><div style="width:718px;height:0;  padding-bottom: 62.534818941504%; padding-top:0;"><iframe src="https://player.vimeo.com/video/155892932?autoplay=1&title=0&byline=0&portrait=0" width="718" height="449" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe></div></div></div></div><div class="element-container cf fb" data-style="eyJhZHZhbmNlZENsYXNzIjoiZmIifQ==" id="le_body_row_3_col_1_el_2"><div class="element"><div class="op-custom-html-block"><center><div class="fb-like" data-href="https://www.facebook.com/georgebrownfans" data-width="380" data-layout="standard" data-action="like" data-show-faces="false" data-colorscheme="dark" data-share="false"></div></center></div></div></div><div class="element-container cf" data-style="e30=" id="le_body_row_3_col_1_el_3"><div class="element"><div class="op-text-block" style="margin-top:-40px;width:100%;margin: 0 auto;text-align:center;padding-top:0px;"><p style='font-weight:bold;color:#ffffff;'>Make Sure Sound Is Turned On. Wait 5 – 10 Seconds For Stream To Load.</p>
+</div></div></div><div class="element-container cf" data-style="" id="le_body_row_3_col_1_el_4"><div class="element"> <div class="op-text-block" style="width:100%;margin: 0 auto;text-align:center;"></div> </div></div></div></div></div>
+                    <div  class="row one-column cf ui-sortable" id="le_body_row_4" data-style="">
+                        <div class="fixed-width"><div class="one-column column cols" id="le_body_row_4_col_1"><div class="element-container cf" data-style="" id="le_body_row_4_col_1_el_1"><div class="element"> <div class="op-custom-html-block"><div class="optx">
+<table align="center">
+                                   
+                    
+                      <div align="center" valign="top">
+                        <div style="display:none;" align="center">
+                          <input name="checkbox2" type="checkbox" id="staticBox" checked="yes" onChange="remainClicked(this)" onClick="remainClicked(this)"/>
+                        </div>
+                      </div>
+                  
+        <tr>
+                    <td><label> </label>
+                      
+             <div class="note"><input name="checkbox3" type="checkbox" id="optionalCheck" onChange="optionalClicked(this)" onClick="optionalClicked(this)" value="checkbox" checked="checked"/>
+             <label for="optionalCheck"><span></span>Give me trial access to Sniper X too. This bonus is optional, HOWEVER most advanced members go for this because it will make your campaigns MUCH more profitable. Free trial then future payment option of $47/month.</label></div>
+                    
+        </td></tr>
+                  <tr id="v3hidden">
+                    <td>
+                    <div style="display:none;" align="center">
+                    <input name="checkbox3" type="checkbox" id="freeTrial"/>
+                    </div>
+                    </td>
+                  </tr>
+
+                </table>
+</div>
+
+<div id="bottom_div" class="" style="color:#222; display:none;">
+
+      <div id="form_integration" class="mobile-sbscrptnform">
+  <form name="redirectform2 subscriptionFrm_14729" id="subscriptionFrm_14729" class="form-horizontal" action="https://gsniper.sendlane.com/form/14729" method="post" onSubmit="return validateEmailForm.submit(this)">
+    <input type="hidden" name="form_id" id="form_id" value="14729"/>
+    <div class="form-theme1">
+                <div class="form-group" id="form_field_3 ">
+                            <div class="col-lg-3 subscrptn-btn">
+              <input name="email" class="form-control" id="form_field[3]" name="form_field[3]" type="text" placeholder="Enter Your Email:"/>                          </div>
+                    </div>
+                  <div class="form-group" id="form_field_4 ">
+                        <div class="col-lg-3 subscrptn-btn">
+              <p class="ml54-per"><input name="submit-button" class="btn btn-sm btn-success btn-block" type="submit" value="Subscribe" onclick="PreventExitSplash=true"/></p>                         </div>
+                    </div>
+                  <div class="form-group" id="form_field_164 ">
+                        <div class="col-lg-3 subscrptn-btn">
+              <input class="form-control" id="form_field[164]" name="form_field[164]" type="hidden"/>                          </div>
+                    </div>
+            </div>
+  </form>
+</div>
+
+</div>
+
+<div id="default_box" style="color:#FFFFFF;">
+
+<div id="form_integration" class="mobile-sbscrptnform">
+  <form name="redirectform1 subscriptionFrm_14728" id="subscriptionFrm_14728" class="form-horizontal" action="https://gsniper.sendlane.com/form/14728" method="post" onSubmit="return validateEmailForm.submit(this)">
+    <input type="hidden" name="form_id" id="form_id" value="14728"/>
+    <div class="form-theme1">
+                <div class="form-group" id="form_field_3 ">
+                            <div class="col-lg-3 subscrptn-btn">
+              <input name="email" class="form-control" id="form_field[3]" name="form_field[3]" type="text" placeholder="Enter Your Email:"/>                          </div>
+                    </div>
+                  <div class="form-group" id="form_field_4 ">
+                        <div class="col-lg-3 subscrptn-btn">
+              <p class="ml54-per"><input name="submit-button" class="btn btn-sm btn-success btn-block" type="submit" value="Subscribe" onclick="PreventExitSplash=true"/></p>                         </div>
+                    </div>
+                  <div class="form-group" id="form_field_164 ">
+                        <div class="col-lg-3 subscrptn-btn">
+              <input class="form-control" id="form_field[164]" name="form_field[164]" type="hidden"/>                          </div>
+                    </div>
+            </div>
+  </form>
+</div>
+
+</div></div> </div></div><div class="element-container cf" data-style="" id="le_body_row_4_col_1_el_2"><div class="element"> <div class="op-text-block" style="margin-top:-10px;width:100%;line-height:15px;margin: 0 auto;text-align:center;padding-top:-10px;"><p style='font-size:17px;font-weight:bold;color:#ffffff;line-height:15px;'>Just $47 for instant access to <span style="text-decoration: underline;">everything</span>.</p>
+</div> </div></div></div></div></div>
+                    <div  class="row one-column cf ui-sortable" id="le_body_row_5" data-style="">
+                        <div class="fixed-width"><div class="one-column column cols" id="le_body_row_5_col_1"><div class="element-container cf" data-style="" id="le_body_row_5_col_1_el_1"><div class="element"> <div style="height:200px"></div> </div></div></div></div></div>
+                    <div  class="row one-column cf ui-sortable" id="le_body_row_6" data-style="">
+                        <div class="fixed-width"><div class="one-column column cols" id="le_body_row_6_col_1"><div class="element-container cf footertext" data-style="eyJhZHZhbmNlZENsYXNzIjoiZm9vdGVydGV4dCJ9" id="le_body_row_6_col_1_el_1"><div class="element"><div class="op-text-block" style="width:100%;line-height:14px;margin: 0 auto;text-align:center;"><p style='font-size:12px;color:#6e6e6e;line-height:14px;'>Copyright © 2016 All Rights Reserved<br />
+This site and the products and services offered on this site are not associated, affiliated, endorsed, or sponsored by Google, Clickbank, eBay, Amazon, Yahoo or Bing. ClickBank is the retailer of products on this site. CLICKBANK® is a registered trademark of Click Sales, Inc., a Delaware corporation located at 917 S. Lusk Street, Suite 200, Boise Idaho, 83706, USA and used by permission. ClickBank's role as retailer does not constitute an endorsement, approval or review of these products or any claim, statement or opinion used in promotion of these products.</p>
+</div></div></div><div class="element-container cf supportlink" data-style="eyJhZHZhbmNlZENsYXNzIjoic3VwcG9ydGxpbmsifQ==" id="le_body_row_6_col_1_el_2"><div class="element"><div class="op-text-block" style="width:100%;margin: 0 auto;text-align:center;"><p style='font-size:13px;color:#5e5e5e;'>Questions or problems ordering? <a href="http://www.georgemontagubrown.com/support/" target="_blank">Contact Us</a>.</p>
+</div></div></div><div class="element-container cf footerlinks" data-style="eyJhZHZhbmNlZENsYXNzIjoiZm9vdGVybGlua3MifQ==" id="le_body_row_6_col_1_el_3"><div class="element"><div class="op-text-block" style="width:100%;margin: 0 auto;text-align:center;"><p style='font-size:12px;color:#5e5e5e;'><a href="http://gsniper.com/affiliates" target="_blank">Affiliates </a> | <a href="http://gsniper.com/members" target="_blank">Members</a> | <a href="http://gsniper.com/termsofuse.html" target="_blank">Terms &amp; Conditions</a> | <a href="http://gsniper.com/privacy.html" target="_blank">Privacy Policy</a> | <a href="http://gsniper.com/spam-policy.html" target="_blank">Spam Policy</a> | <a href="http://gsniper.com/disclaimer.html" target="_blank">Earnings Disclaimer</a></p>
+</div></div></div><div class="element-container cf" data-style="" id="le_body_row_6_col_1_el_4"><div class="element"> <script src="//cbtb.clickbank.net/?vendor=gsniper"></script><script>try{} catch (err) {};</script> </div></div><div class="element-container cf" data-style="" id="le_body_row_6_col_1_el_5"><div class="element"> <script>try{
+window.__lc = window.__lc || {};
+window.__lc.license = 6750341;
+(function() {
+  var lc = document.createElement('script'); lc.type = 'text/javascript'; lc.async = true;
+  lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.livechatinc.com/tracking.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(lc, s);
+})();
+} catch (err) {};</script> </div></div></div></div></div></div>    </div><!-- container -->
+<link rel='stylesheet' id='wpmtst-style-css'  href='http://gsniper.gdmbenterprisesl.netdna-cdn.com/wp-content/plugins/strong-testimonials/css/wpmtst.css?ver=4.0.1' type='text/css' media='all' />
+<link rel='stylesheet' id='wpmtst-form-style-css'  href='http://gsniper.gdmbenterprisesl.netdna-cdn.com/wp-content/plugins/strong-testimonials/css/wpmtst-form.css?ver=4.0.1' type='text/css' media='all' />
+<script type='text/javascript' src='http://gsniper.gdmbenterprisesl.netdna-cdn.com/wp-content/plugins/strong-testimonials/js/jquery.validate.min.js?ver=4.0.1'></script>
+
+<script type="text/javascript"> 
+<!--
+var beenherecookie = 'beenhere';
+var beenherebegin = document.cookie.indexOf(beenherecookie);
+if (beenherebegin > -1) { 
+showit(); 
+}
+else
+{
+  setTimeout("showit()", 222000); //set to 1000 X number of desired delay seconds. So 2 minutes (120 seconds) is 120 X 1000 = 120000
+  WriteCookie("beenhere","yes");
+}
+//-->
+</script><script type='text/javascript' src='http://gsniper.gdmbenterprisesl.netdna-cdn.com/wp-includes/js/comment-reply.min.js'></script>
+<script type='text/javascript' src='http://gsniper.gdmbenterprisesl.netdna-cdn.com/wp-includes/js/wp-embed.min.js'></script>
+<script type='text/javascript' src='http://gsniper.gdmbenterprisesl.netdna-cdn.com/wp-content/themes/optimizePressTheme/lib/js/op-front-all.min.js'></script>
+<script type='text/javascript' src='http://gsniper.gdmbenterprisesl.netdna-cdn.com/wp-content/themes/optimizePressTheme/lib/js/menus.min.js'></script>
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","licenseKey":"56cc3665d9","applicationID":"8400524","transactionName":"ZlEAYUQAWktQWhddDl8bI1ZCCFtWHk0GWRFdVRZQ","queueTime":0,"applicationTime":1038,"atts":"ShYDFwwaSUU=","errorBeacon":"bam.nr-data.net","agent":""}</script></body>
+</html>
+<!-- Performance optimized by W3 Total Cache. Learn more: https://www.w3-edge.com/products/
+
+Page Caching using apc (Requested URI contains query)
+Content Delivery Network via gsniper.gdmbenterprisesl.netdna-cdn.com
+Application Monitoring using New Relic
+
+ Served from: gsniper.com @ 2017-02-09 07:12:37 by W3 Total Cache -->
