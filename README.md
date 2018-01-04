@@ -1,5 +1,5 @@
 # hello-world
-first Respository
+first Repository
 
 
 I am vishal dubey
